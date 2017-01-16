@@ -1,0 +1,80 @@
+
+
+html, body
+{
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'ubuntu', Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.42em;
+  -webkit-font-smoothing: antialiased;
+  color: $black;
+  margin-top: 0;
+}
+
+.container
+{
+  margin: 0 auto;
+  width: $width;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  @extend %clearfix;
+}
+
+.wrapper
+{
+  overflow: hidden;
+  min-height: 100%;
+  min-width: $width + 20px;
+}
+
+.section
+{
+  height: 100vh;
+  min-height: 650px;
+}
+
+.section__title
+{
+  font-family: 'gagalin', Helvetica, sans-serif;
+  font-size: 72px;
+}
+
+h1, h2, h3, h4, h5
+{
+  font-family: 'gagalin', Helvetica, sans-serif;
+  margin-top: 0;
+  font-weight: normal;
+
+}
+
+ul
+{
+  padding: 0;
+  margin: 0;
+
+  li
+  {
+    list-style: none;
+  }
+}
+
+p
+{
+  padding: 0;
+  margin: 0;
+}
+
+footer
+{
+  min-width: $width + 20px;
+}
+
+*
+{
+  box-sizing: border-box;
+}

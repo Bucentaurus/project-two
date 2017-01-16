@@ -1,0 +1,257 @@
+.burgers
+{
+  background: -moz-linear-gradient(top, rgb(249,180,59) 0%, rgb(235,140,56) 48%, rgb(249,180,59) 74%);
+  background: -webkit-linear-gradient(top, rgb(249,180,59) 0%, rgb(235,140,56) 48%, rgb(249,180,59) 74%);
+  background: -ms-linear-gradient( to bottom, rgb(249,180,59) 0%, rgb(235,140,56) 48%, rgb(249,180,59) 74%);
+}
+
+.burger__item
+{
+  @extend %clearfix;
+  width: 940px;
+  top: 60px;
+ // margin-right:200px;
+}
+
+.burger__item__left
+{
+  float: left;
+  width: 50%;
+  position: relative;
+}
+
+.burger__item__right
+{
+  padding-top: 50px;
+}
+
+.ingredients
+{
+  text-decoration: none;
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+
+  &:hover
+  {
+    .burger__ingredients
+    {
+      background-color: $red;
+    }
+
+    .dropdown
+    {
+      left: 90px;
+      opacity: 1;
+    }
+  }
+}
+
+.burger__ingredients
+{
+  display: inline-block;
+  background-color: #f08c33 ;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  text-align: center;
+  transition: .3s;
+  cursor: auto;
+}
+
+.ingredients__pic
+{
+  line-height: 0;
+}
+
+.ingredients-img
+{
+  margin-top: 13px;
+  margin-bottom: 3px;
+  width: 47px;
+  height: 45px;
+}
+
+.ingredients__title
+{
+  text-align: center;
+  font-family: 'gagalin', Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+}
+
+.dropdown {
+  border-radius: 10px;
+  background-color: rgba(#ffffff, .93%);
+  position: absolute;
+  top: 0px;
+  left: -9999px;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 10;
+
+  &::before
+  {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    left: -29px;
+  }
+}
+
+.ingredients__list
+{
+  margin-top: 30px;
+  margin-right: 15px;
+}
+
+
+.ingredients__item
+{
+  margin-left: 25px;
+  margin-bottom: 20px;
+  @extend %clearfix;
+  font-family: 'ubuntu', Helvetica, sans-serif;
+  color: rgb(47, 50, 52);
+  font-size: 16px;
+  font-weight: 300;
+
+}
+
+.ingredients__item__title, .ingredients__item__pic, .ingredients__item__weight
+{
+  float: left;
+  margin-right: 30px;
+  line-height: 2.5;
+}
+
+.ingredients__item__title
+{
+  width: 69px;
+}
+
+.ingredients__item__pic
+{
+  width: 44px;
+  height: 40px;
+}
+
+.burger-img
+{
+  width: 415px;
+}
+
+.burger__nutrition
+{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.nutrition__pic
+{
+  float: left;
+
+}
+
+.nutrition-img
+{
+  width: 61px;
+  height: 61px;
+}
+
+#kkal
+{
+  fill: black;
+}
+
+.nutrition__number
+{
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  color: #f9d19d;
+  font-family: 'gagalin', Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.nutrition__text
+{
+  color: #f9d19d;
+  font-family: 'gagalin', Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 0;
+}
+
+.burger__item__right
+{
+  float: right;
+  width: 50%;
+}
+
+.burger__title
+{
+  font-size: 72px;
+  color: #fff;
+  line-height: 0.9em;
+  margin-bottom: 45px;
+  margin-top: -15px;
+}
+
+.burger__desc
+{
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.burger__price
+{
+  color: $red;
+  font-family: 'gagalin', Helvetica, sans-serif;
+  display: inline-block;
+  //vertical-align: middle;
+  margin-right: 30px;
+}
+
+.burger__price__number
+{
+  font-size: 72px;
+  display: inline-block;
+}
+
+.burger__price__currency
+{
+  font-size: 30px;
+  display: inline-block;
+}
+
+.burger__order
+{
+  display: inline-block;
+}
+.burger__order__link
+{
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+
+.burgers__prev
+{
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: rotate(90deg);
+}
+
+.burgers__next
+{
+  position: absolute;
+  right: -20px;
+  transform: rotate(-90deg);
+  top: 50%;
+}

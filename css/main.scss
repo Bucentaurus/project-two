@@ -1,0 +1,65 @@
+// colors and stuff
+$black: #2f3234;
+$yellow: #f9b43b;
+$orange: #e45028;
+$red: #e35028;
+$gray: #727172;
+$width: 940px;
+
+// fonts
+%ubuntu
+{
+  font-family: 'ubuntu', Helvetica, sans-serif;
+}
+
+%ubuntu-l
+{
+  font-family: 'ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+%ubuntu-m
+{
+  font-family: 'ubuntu', Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+%gagalin
+{
+  font-family: 'gagalin', Helvetica, sans-serif;
+}
+
+%lifehack
+{
+  font-family: 'lifehackmedium', Helvetica, sans-serif;
+}
+
+// clearfix
+%clearfix
+{
+  &::after{
+	content: "";
+  display: block;
+  clear: both;
+  }
+}
+
+// setups
+@import "layout/settings";
+@import "layout/fonts";
+@import "layout/common";
+
+// sections
+@import "sections/hero";
+@import "sections/best";
+@import "sections/burgers";
+@import "sections/team";
+@import "sections/menu";
+@import "sections/reviews";
+@import "sections/order";
+@import "sections/map";
+
+//plugins
+@import "plugins/jquery.fullPage";
+@import "plugins/jquery.modal";
+@import "plugins/jquery.jcarousel";

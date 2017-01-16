@@ -1,0 +1,99 @@
+.order
+{
+  background: url('../img/bg/order.png') center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.order__title
+{
+  text-align: center;
+  font-size: 72px;
+  color: $yellow;
+}
+
+.order__form
+{
+  font-family: 'ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-order
+{
+  @extend %clearfix;
+}
+
+.form__left
+{
+  float: left;
+  width: 50%;
+}
+
+.form__right
+{
+  float: right;
+  width: 50%;
+}
+
+#name, #telephone, #street, #house, #building, #flat, #floor, #comment
+{
+  border-radius: 5px;
+}
+
+#name, #telephone, #street, #house, #building, #flat, #floor
+{
+  height: 35px;
+}
+
+#name, #telephone
+{
+  width: 220px;
+}
+
+#street, #house, #building, #flat, #floor
+{
+  width: 100px;
+}
+
+.order__row
+{
+  @extend %clearfix;
+  margin-bottom: 20px;
+}
+
+.order__block
+{
+  float: left;
+  margin-right: 15px;
+}
+
+
+.order__another__row
+{
+  margin-top: 18px;
+  //@extend %clearfix;
+  margin-bottom: 18px;
+}
+
+.order__button__submit
+{
+  margin-right: 20px;
+  padding: 10px 15px 11px 15px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
+.reset-button
+{
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+}
