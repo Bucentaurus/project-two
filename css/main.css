@@ -42,8 +42,6 @@ body {
   width: 940px;
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
 /*.section > *
@@ -135,8 +133,6 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 50%; }
   .sidemenu__link:after {
@@ -244,6 +240,29 @@ footer {
 
 .hero-burger__img {
   width: 430px; }
+
+.down-arrow {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 60px;
+  height: 14px;
+  margin-left: -15px;
+  transition: .3s;
+  height: 60px; }
+  .down-arrow:hover svg {
+    margin-top: -15px;
+    width: 35px;
+    height: 35px; }
+  .down-arrow svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    transition: .3s; }
 
 .best {
   background: url("../img/bg/best.png") center center no-repeat;
@@ -443,15 +462,11 @@ footer {
   position: absolute;
   left: -50px;
   top: 50%;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .burgers__next {
   position: absolute;
   right: -20px;
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
   top: 50%; }
 
@@ -480,25 +495,34 @@ footer {
   position: relative;
   margin-bottom: 38px; }
 
-.triangle {
-  position: absolute;
-  top: 10px;
-  left: -30px;
-  border-top: 0px solid transparent;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-bottom: 7px solid #f9b43b;
-  width: 0;
-  height: 0; }
-
 .team-acco__link {
   font-family: 'gagalin', Helvetica, sans-serif;
   font-size: 14px;
   text-decoration: none;
   color: #fff; }
+  .team-acco__link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    border-top: 7px solid #f9b43b;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-bottom: 0px solid transparent;
+    width: 0;
+    height: 0;
+    transform: rotate(0deg);
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s; }
 
 .active {
   color: #f9b43b; }
+  .active::before {
+    transform: rotate(-180deg); }
 
 .team-acco__content {
   display: none;
@@ -577,8 +601,6 @@ footer {
 .menu-acco__trigger-title {
   font-size: 40px;
   color: #fff;
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
   text-align: center;
   white-space: nowrap;
@@ -622,8 +644,6 @@ footer {
   width: 100%;
   height: 100%; }
   .review:hover .review__hover {
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    -ms-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1);
     opacity: 1; }
 
@@ -633,7 +653,6 @@ footer {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
 
 .review__hover {
@@ -643,8 +662,6 @@ footer {
   left: 50%;
   width: 100%;
   height: 100%;
-  -webkit-transform: translate(-50%, -50%) scale(0.9);
-  -ms-transform: translate(-50%, -50%) scale(0.9);
   transform: translate(-50%, -50%) scale(0.9);
   opacity: 0;
   background: rgba(20, 20, 20, 0.7);
@@ -792,8 +809,6 @@ footer {
     background: #e35028;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: width .3s, height .3s; }
 
