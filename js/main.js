@@ -131,15 +131,17 @@ $(function()
 
                     var popup = data.status ? "#success" : "#error";
 
-                    window.globalVar = $(popup).bPopup({ onClose: function(){ form.trigger('reset'); }});
+                    var bPopup = $(popup).bPopup({ onClose: function(){ form.trigger('reset'); }});
+
+                    $('.close__button').on('click', function(e)
+                    {
+                        bPopup.close();
+                    });
+
                 }
 
             }
         )
-    $('.close__button').on('click', function(e)
-    {
-        globalVar.close();
-    })
 
     })
 
