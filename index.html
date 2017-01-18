@@ -9,10 +9,6 @@
 
   <!--Scripts-->
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-
-  <!--Vertical Accordion-->
-  <script type="text/javascript" src="js/jquery.accordion.js"></script>
 
   <!--fullPage-->
   <script type="text/javascript" src="js/jquery.fullPage.js"></script>
@@ -20,13 +16,25 @@
   <!--Modal-->
   <script type="text/javascript" src="js/jquery.modal.js"></script>
 
+  <!--bPopup-->
+  <script type="text/javascript" src="js/jquery.bpopup.js"></script>
+
   <!--maskedInput-->
   <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
 
   <!--jCarousel-->
   <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
 
+    <!--Yandex Maps-->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=tr_RU" type="text/javascript"></script>
+
+
   <!---->
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+
+
 </head>
 <body>
   <div class="wrapper">
@@ -437,11 +445,11 @@
           <div class="container">
             <div class="team__section">
               <div class="section__title team__title">Команда</div>
-              <ul class="team-acco" data-accordion-group>
-                <li class="team-acco__item" data-accordion>
+              <ul class="team-acco">
+                <li class="team-acco__item">
                  <!--// <div class="triangle"></div>-->
-                  <a href="" class="team-acco__link" data-control>Дэниэл Редклиф</a>
-                  <div class="team-acco__content" data-content>
+                  <a href="" class="team-acco__link">Дэниэл Редклиф</a>
+                  <div class="team-acco__content">
                     <div class="team-acco__pic">
                       <img src="img/content/avatars/avatar2.png" alt="" class="team-acco__img">
                     </div>
@@ -451,10 +459,10 @@
                     </div>
                   </div>
                 </li>
-                <li class="team-acco__item open" data-accordion>
+                <li class="team-acco__item">
                  <!--<div class="triangle"></div>-->
-                 <a href="" class="team-acco__link active" data-control>Ричард Джеймс</a>
-                 <div class="team-acco__content" data-content>
+                 <a href="" class="team-acco__link">Ричард Джеймс</a>
+                 <div class="team-acco__content">
                    <div class="team-acco__pic">
                      <img src="img/content/avatars/avatar2.png" alt="" class="team-acco__img">
                    </div>
@@ -464,10 +472,10 @@
                    </div>
                  </div>
                </li>
-               <li class="team-acco__item" data-accordion>
+               <li class="team-acco__item">
                  <!--<div class="triangle"></div>-->
-                 <a href="" class="team-acco__link" data-control>Джейк Финн</a>
-                 <div class="team-acco__content" data-content>
+                 <a href="" class="team-acco__link">Джейк Финн</a>
+                 <div class="team-acco__content">
                    <div class="team-acco__pic">
                      <img src="img/content/avatars/avatar2.png" alt="" class="team-acco__img">
                    </div>
@@ -477,10 +485,10 @@
                    </div>
                  </div>
                </li>
-               <li class="team-acco__item" data-accordion>
+               <li class="team-acco__item">
                  <!--<div class="triangle"></div>-->
-                 <a href="" class="team-acco__link" data-control>Николай Иванов</a>
-                 <div class="team-acco__content" data-content>
+                 <a href="" class="team-acco__link">Николай Иванов</a>
+                 <div class="team-acco__content">
                    <div class="team-acco__pic">
                      <img src="img/content/avatars/avatar2.png" alt="" class="team-acco__img">
                    </div>
@@ -749,7 +757,7 @@
             <h1 class="order__title">Закажите доставку</h1>
           </div>
           <div class="order__form">
-            <form action="#" class="form-order">
+            <form id="form-order" method="POST">
               <div class="form__left">
 
                 <div class="order__row">
@@ -758,16 +766,16 @@
                     <div class="form__label">
                       Имя
                     </div>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="name">
                     </label>
                   </div>
 
                   <div class="order__block">
-                    <label for="telephone">
+                    <label for="tel">
                       <div class="form__label">
                       Телефон
                       </div>
-                    <input type="tel" id="telephone">
+                    <input type="tel" id="tel" name="tel">
                     </label>
                   </div>
                 </div>
@@ -831,23 +839,45 @@
                   </label>
 
                 <div class="order__another__row">
-                  <input type="radio" name="payment" value="cash" checked>Потребуется сдача
-                  <input type="radio" name="payment" value="bycard">Оплата по карте
+                    <label for="radio-1" class="order__radio">
+                        <input type="radio" id="radio-1" name="payment" value="cash" class="order__radio__elem" checked>
+                        <div class="radio__fake"></div>
+                        <div class="radio__label">Потребуется сдача</div>
+                    </label>
+                    <label for="radio-2" class="order__radio">
+                        <input type="radio" id="radio-2" name="payment" value="bycard" class="order__radio__elem">
+                        <div class="radio__fake"></div>
+                        <div class="radio__label">Оплата по карте</div>
+                    </label>
                 </div>
 
-                <input type="checkbox" name="dontcall" value="dontcall" checked>Не перезванивать
-
+                  <div class="order__another__row">
+                    <label for="radio-3" class="checkbox">
+                        <input type="checkbox" name="dontcall" value="dontcall" id="radio-3" class="order__radio__elem" checked>
+                        <div class="radio__fake checkbox__fake"></div>
+                        <div class="radio__label">Не перезванивать</div>
+                     </label>
+                  </div>
                 <div class="order__another__row">
-                    <input type="submit" value="Заказать" class="order__button order__button__submit">
+                    <input type="submit" value="Заказать" class="order__button order__button__submit" >
                     <input type="reset" value="Очистить" class="reset-button">
                 </div>
 
               </div>
             </form>
+            <div class="popup__sent" id="success">
+              <div class="message__text">Ваш заказ принят!</div>
+              <a class="close__button order__button">ЗАКРЫТЬ</a>
+            </div>
+            <div class="popup__error" id="error">
+              <div class="message__text">Произошла ошибка. Попробуйте еще раз.</div>
+              <a class="close__button order__button">ЗАКРЫТЬ</a>
+            </div>
           </div>
         </div>
       </section>
       <section class="section map">
+          <div class="yandex-map" id="map"></div>
         <div class="container"></div>
         <footer class="footer">
           <div class="container">
@@ -906,3 +936,4 @@
   </ul>
 </body>
 </html>
+
