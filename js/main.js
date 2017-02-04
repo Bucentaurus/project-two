@@ -6,7 +6,14 @@ $(document).ready(function() {
     //OnePage Scroll
     $('#fullpage').fullpage(
         {
-            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage', 'seventhPage', 'eighthPage']
+            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage', 'seventhPage', 'eighthPage'],
+            afterLoad: function(anchorLink, index) {
+                var sidemenuItems = $('.sidemenu__item');
+
+                sidemenuItems.removeClass('active');
+                $($(sidemenuItems)[index - 1]).addClass('active')
+            }
+
         }
     );
     //------------------------------------------------------------------------------------------------------------------
@@ -33,6 +40,26 @@ $(document).ready(function() {
        $(this).addClass('active');
     });
 
+  /*  $(function()
+    {
+        var activeSection = $('section.active'),
+            sideChild = activeSection.find('.sidemenu__item'),
+            sidemenuItems = $('.sidemenu__item');
+
+        console.log(activeSection);
+        console.log(sideChild);
+
+
+        if (!(sideChild.hasClass('active')))
+        {
+            sidemenuItems.removeClass('active');
+            sideChild.addClass('active');
+        }
+
+
+    })
+*/
+
     //------------------------------------------------------------------------------------------------------------------
 
 
@@ -45,14 +72,14 @@ $(document).ready(function() {
 
             //slide up all the link lists
             $(".team-acco__content").slideUp();
+            items.removeClass('active');
             //slide down the link list below the h3 clicked - only if its closed
             if(!$(this).next().is(":visible"))
             {
                 $(this).next().slideDown();
+                $(this).addClass('active');
             }
 
-            items.removeClass('active');
-            $(this).addClass('active');
         });
 
     //------------------------------------------------------------------------------------------------------------------
@@ -71,13 +98,20 @@ $(document).ready(function(){
             items = container.find('.menu-acco__item');
             //activeItem = items.find('.active');
 
+        if ($(this).hasClass('active'))
+        {
+            items.animate({width: "80px"}, {duration:500, queue:false});
+            items.removeClass('active');
+        }
 
 
-        items.animate({width: "80px"}, {duration:500, queue:false});
-        $(this).animate({width: "630px"}, {duration:500, queue:false});
+        else {
+            items.animate({width: "80px"}, {duration: 500, queue: false});
+            $(this).animate({width: "630px"}, {duration: 500, queue: false});
 
-        items.removeClass('active');
-        $(this).addClass('active');
+            items.removeClass('active');
+            $(this).addClass('active');
+        }
 
 
     });

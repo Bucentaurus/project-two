@@ -41,8 +41,7 @@ body {
   margin: 0 auto;
   width: 940px;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%); }
+  top: 26%; }
 
 /*.section > *
 {
@@ -208,7 +207,7 @@ footer {
   border-radius: 5px; }
 
 .hero__container {
-  top: 35%; }
+  top: 10%; }
 
 .hero__left {
   float: left; }
@@ -879,6 +878,9 @@ footer {
   background-repeat: no-repeat;
   position: absolute;
   bottom: 0; }
+
+.footer__container {
+  top: 7px; }
 
 .footer__left {
   float: left;

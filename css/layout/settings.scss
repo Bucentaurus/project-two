@@ -28,8 +28,8 @@ body {
   margin: 0 auto;
   width: $width;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 26%;
+  //transform: translateY(-50%);
   @extend %clearfix;
 }
 
